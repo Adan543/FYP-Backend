@@ -1,0 +1,41 @@
+{
+  "name": "fyp-backend",
+  "version": "1.0.0",
+  "description": "backend for urdu degitization",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "db:migrate": "sequelize db:migrat",
+    "db:seed": "sequelize db:seed:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adan543/FYP-Backend.git"
+  },
+  "author": "- adan - jawwad - muhib - yaseen -",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Adan543/FYP-Backend/issues"
+  },
+  "homepage": "https://github.com/Adan543/FYP-Backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.4"
+  },
+  "devDependencies": {
+    "eslint": "^9.12.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "sequelize-cli": "^6.6.2"
+  }
+}
