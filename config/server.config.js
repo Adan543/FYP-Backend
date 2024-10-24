@@ -2,8 +2,8 @@ module.exports = {
     
     "dev" : {
     USERNAME: 'root',
-    PASS: null,
-    DB: 'canary_billing_meteorap',
+    PASS: '12345',
+    DB: 'urdumerezaban',
     HOST: '127.0.0.1',
     dialect:'mysql',
     pool: {

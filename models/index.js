@@ -16,10 +16,11 @@ try {
         dbConfig.PASS,
         {
         host: dbConfig.HOST,
-        dialect: dbConfig.dialect,
+        dialect: 'mysql',
         
         pool: dbConfig.pool
       });
+      console.log(dbConfig.dialect);
       
       
       fs

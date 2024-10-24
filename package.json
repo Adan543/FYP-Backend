@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "db:migrate": "sequelize db:migrat",
+    "db:migrate": "sequelize db:migrate",
     "db:seed": "sequelize db:seed:all"
   },
   "repository": {
