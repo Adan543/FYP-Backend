@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Privilege.hasMany(models.UserPrivilege, {foreignKey:'privilege_id'})
     }
   }
   Privilege.init({
@@ -20,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     text_to_speech: DataTypes.BOOLEAN
   }, {
     sequelize,
+    tableName:'privileges',
     modelName: 'Privilege',
   });
   return Privilege;

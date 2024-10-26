@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Package.hasMany(models.UserPackage, {foreignKey:'user_id'})
     }
   }
   Package.init({
@@ -20,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     discount: DataTypes.INTEGER
   }, {
     sequelize,
+    tableName:'package',
     modelName: 'Package',
   });
   return Package;

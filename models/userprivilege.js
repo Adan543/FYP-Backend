@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      UserPrivilege.belongsTo(models.User, {foreignKey:'id'})
+      UserPrivilege.belongsTo(models.Privilege, {foreignKey:'id'})
     }
   }
   UserPrivilege.init({
@@ -18,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     privilege_id: DataTypes.INTEGER
   }, {
     sequelize,
+    tableName:'userprivileges',
     modelName: 'UserPrivilege',
   });
   return UserPrivilege;

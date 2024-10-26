@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      UserPackage.belongsTo(models.User, {foreignKey:'id'})
+      UserPackage.belongsTo(models.Package, {foreignKey:'id'})
+
     }
   }
   UserPackage.init({
@@ -19,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     expire: DataTypes.DATE
   }, {
     sequelize,
+    tableName:'userpackages',
     modelName: 'UserPackage',
   });
   return UserPackage;

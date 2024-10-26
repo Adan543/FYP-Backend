@@ -2,7 +2,9 @@ module.exports = {
     
     "dev" : {
     USERNAME: 'root',
-    PASS: '12345',
+    PASS: null,
+    DB: 'urdumerezaban',
+    PASS: null,
     DB: 'urdumerezaban',
     HOST: '127.0.0.1',
     dialect:'mysql',
@@ -12,5 +14,5 @@ module.exports = {
         acquire: 30000,
         idle: 10000
       }
-    }
+    },
 }

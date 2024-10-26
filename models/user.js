@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const { USE } = require('sequelize/lib/index-hints');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -11,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.UserHistories, {foreignKey:'user_id'})
+      User.hasOne(models.UserRole, {foreignKey:'user_id'})
+      User.hasOne(models.UserPrivilege, {foreignKey:'user_id'})
+      User.hasOne(models.UserPackage, {foreignKey:'user_id'})
     }
   }
   User.init({
@@ -19,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING
   }, {
     sequelize,
+    tableName:'users',
     modelName: 'User',
   });
   return User;

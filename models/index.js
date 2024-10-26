@@ -20,7 +20,6 @@ try {
         
         pool: dbConfig.pool
       });
-      console.log(dbConfig.dialect);
       
       
       fs
