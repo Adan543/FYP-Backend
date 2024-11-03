@@ -62,6 +62,9 @@ module.exports = {
                 result = result.replace(serviceMessage.replaceWithThis, "").trim();
             }
           } 
+          else if (requestType === 'translate') {
+            result = result.replace(/^Please translate the following Urdu text into English:/i, '').trim();
+        }
         
             return { status: true, data: result };
         } catch (error) {
