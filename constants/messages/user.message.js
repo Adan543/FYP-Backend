@@ -1,5 +1,5 @@
 
 module.exports = {
-    emailExist: "This email already exists.",
-    InvalidEmailOrPassword: "Invalid email or password"
+    emailExist: 'This email is already registered.',
+    InvalidEmailOrPassword: 'Invalid email or password.'
 };
