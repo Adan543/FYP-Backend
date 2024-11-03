@@ -13,6 +13,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false
       },
+      institution_name: {
+        type: Sequelize.STRING,
+      },
+      country: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
+      
       email: {
         type: Sequelize.STRING(50),
         allowNull: false,
