@@ -8,14 +8,14 @@ const generalMessages = require('../constants/messages/general.messages')
 
 exports.validate = (method) => {
     switch (method) {
-        case 'singUp': {
+        case 'signUp': {
             return [
                 body('user_name', generalMessages.nameRequiredString).exists().isString(),
                 body('email', generalMessages.emailRequiredString).exists().isString(),
                 body('email', generalMessages.emailRequiredString).exists(),
             ]
         }
-        case 'loginIn': {
+        case 'login': {
             return [
                 body('password', generalMessages.nameRequiredString).exists().isString(),
                 body('email', generalMessages.emailRequiredString).exists().isString(),
@@ -26,6 +26,11 @@ exports.validate = (method) => {
                 body('difficulty', generalMessages.difficultyRequiredString).exists().isString(),
                 body('text', generalMessages.textRequiredString).exists().isString(),
             ]
+        }
+        case 'translate': { 
+            return [
+                body('text', generalMessages.textRequiredString).exists().isString(),
+            ];
         }
     }
 }

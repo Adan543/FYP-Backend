@@ -55,7 +55,7 @@ module.exports = class UserController extends BaseController {
  * @param {*} req Request object containing email and password
  * @param {*} res Response object
  */
-async loginIn(req, res) {
+async login(req, res) {
     try {
         // validation
         const errors = validator.validationErrors(req)
