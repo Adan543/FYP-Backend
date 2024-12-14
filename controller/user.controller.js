@@ -33,20 +33,30 @@ module.exports = class UserController extends BaseController {
                 if (!errors.isEmpty()) return http_response.validationError(res, errors.array()[0].msg);
 
                 let body = req.body
+
                 const selected_db = db['User']
                 let user = await selected_db.count({
                     where: { email: body.email } 
                 });
                 if (user > 0 ) http_response.conflict(res, userMessages.emailExist )
                     
+                    console.log('body :>> ', body);
                 const hashedPassword = await bcrypt.hash(body.password, userConstant.passwordSalt);
+                
+                let data = {
+                    user_name : `${(body.first_name).trim()} ${(body.last_name).trim()}`,
+                    institution_name: body.institute,
+                    email:body.email,
+                    country:body.country,
+                    password:hashedPassword
 
-                body.password = hashedPassword
-                let response = await selected_db.create(body)
-                return http_response.success(res, response)
+                }
+                console.log('data :>> ', data);
+                let response = await selected_db.create(data)
+                return http_response.success(res, {status:true, data:response})
                 
             } catch (error) {
-                return http_response.error(res, error.message)
+                return http_response.error(res,  {status:false, data:response})
             }
         }
 /**

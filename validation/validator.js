@@ -10,10 +10,14 @@ exports.validate = (method) => {
     switch (method) {
         case 'signUp': {
             return [
-                body('user_name', generalMessages.nameRequiredString).exists().isString(),
-                body('email', generalMessages.emailRequiredString).exists().isString(),
-                body('email', generalMessages.emailRequiredString).exists(),
-            ]
+                body('first_name', generalMessages.nameRequiredString).exists().isString(),
+                body('last_name', generalMessages.nameRequiredString).exists().isString(),
+                body('email', generalMessages.emailRequiredString).exists().isEmail(),
+                body('password', generalMessages.passwordRequiredString).exists().isLength({ min: 6 }),
+                body('contact', generalMessages.contactRequiredString).exists().isString(),
+                body('country', generalMessages.countryRequiredString).exists().isString(),
+                body('institute', generalMessages.instituteRequiredString).exists().isString(),
+              ];
         }
         case 'login': {
             return [

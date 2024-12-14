@@ -10,5 +10,11 @@ module.exports = {
     notFound: 'Item not found.',
     updated: 'Item updated successfully.',
     difficultyRequiredString: 'The "difficulty" field is required and must be a string.',
-    textRequiredString: 'The "text" field is required and must be a string.'
+    textRequiredString: 'The "text" field is required and must be a string.',
+    nameRequiredString: 'Name is required and should be a string',
+    emailRequiredString: 'Email is required and should be valid',
+    passwordRequiredString: 'Password is required and must be at least 6 characters',
+    contactRequiredString: 'Contact is required and must be a valid string',
+    countryRequiredString: 'Country is required and should be a string',
+    instituteRequiredString: 'Institute is required and should be a string',
 }
