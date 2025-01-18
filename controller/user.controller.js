@@ -99,6 +99,7 @@ async login(req, res) {
         );
 
         return http_response.success(res, {
+            status:true,
             message: 'Login successful',
             user: user,
             token
