@@ -2,6 +2,8 @@
 
 const BaseController = require('./base.controller');
 const serviceHelper = require('../helper/service');
+const userHelper = require('../helper/user');
+const userConstant = require('../constants/user.constant');
 const http_response = require('../helper/http_response');
 const serviceMessages = require('../constants/messages/service.messages');
 const validator = require('../validation/validator');
@@ -29,6 +31,9 @@ module.exports = class ServiceController extends BaseController {
             if (!response.status) {
                 return http_response.notFound(res, response.message);
             }
+            const user_id = userHelper.getUserIdOrEmailFromToken(req);
+            let history = await userHelper.saveHistory(user_id, serviceMessages.SUMMARIZATION);
+            response.history = history;
 
             return http_response.success(res,response );
         } catch (error) {
@@ -55,9 +60,12 @@ module.exports = class ServiceController extends BaseController {
             if (!response.status) {
                 return http_response.notFound(res, response.message);
             }
-
+            const user_id = userHelper.getUserIdOrEmailFromToken(req);
+            let history = await userHelper.saveHistory(user_id, userConstant.TRANSLATION);
+            response.history = history;
             return http_response.success(res, response );
         } catch (error) {
+            console.log('error :>> ', error);
             return http_response.error(res, error.message);
         }
     }

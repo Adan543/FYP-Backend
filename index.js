@@ -17,18 +17,18 @@ app.use(cors())
 
 
 
-//jwt verification
-// app.use(async (req, res, next) => {
-//     let auth_bypass = ['/login', '/sign-up'];
-//     auth_bypass.find(url => req.url.includes(url))
+// jwt verification
+app.use(async (req, res, next) => {
+    let auth_bypass = ['/login', '/sign-up'];
+    auth_bypass.find(url => req.url.includes(url))
 
-//     if (auth_bypass.find(url => req.url.includes(url))) {
+    if (auth_bypass.find(url => req.url.includes(url))) {
         
-//         next();
-//     }else {
-//        authMiddleware(req,res,next)
-//     }
-// })
+        next();
+    }else {
+       authMiddleware(req,res,next)
+    }
+})
 
 
 
