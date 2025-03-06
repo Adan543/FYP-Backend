@@ -82,7 +82,8 @@ module.exports = class UserController extends BaseController {
                     model: db.UserHistories
                 }]
             });
-
+            // const hashedPassword = await bcrypt.hash(password, userConstant.passwordSalt);
+            // console.log('hashedPassword :>> ', hashedPassword);
             const isPasswordValid = await bcrypt.compare(password, user.password);
 
             if (!user || !isPasswordValid) { return http_response.unauthorized(res, userMessages.InvalidEmailOrPassword);

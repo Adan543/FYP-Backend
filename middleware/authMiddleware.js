@@ -15,15 +15,18 @@ function verifyToken(req, res, next) {
         let tokens = token.split('Bearer ')
 
         jwt.verify(tokens[1], process.env.JWT_SECRET, function(err, decoded) {
+            if (err) {
+                return http_response.unauthorized(res,generalMessage.tokenExpired)
+            }
             if(decoded) {
                 req.user = decoded;
             }
+            next();
           });
 
-        next();
     } catch (error) {
         console.log('error :>> ', error);
-        return http_response.unauthorized(res,generalMessage.tokenExprired)
+        return http_response.unauthorized(res,generalMessage.loginExpired)
     }
  };
 
