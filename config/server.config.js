@@ -2,9 +2,9 @@ module.exports = {
     
     "dev" : {
     USERNAME: 'root',
-    PASS: null,
+    PASS: 'null',
     DB: 'urdumerezaban',
-    PASS: null,
+    PASS: '12345',
     DB: 'urdumerezaban',
     HOST: '127.0.0.1',
     dialect:'mysql',

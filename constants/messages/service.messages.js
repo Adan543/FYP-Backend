@@ -7,5 +7,5 @@ module.exports = {
     replaceWithThis: 'متن کا خلاصہ یہ ہے کہ',
     unableToGetAnswer: 'Unable to provide an answer at the moment. Please try again later.',
     EnglishWord: 'Please enter words in Urdu only.',
-    translateMessage: 'Translate the provided Urdu text into English.',
+    // translateMessage: 'Translate the provided Urdu text into English.',
 };
